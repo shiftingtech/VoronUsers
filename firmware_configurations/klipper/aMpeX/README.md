@@ -21,4 +21,4 @@ Please read them, and understand what they are doing, before blindly copying the
 |macros_print_startstop.cfg | stop_gcode | for use at the end of a print: parks the toolhead, and optionally turns off the heaters | requires Macro: conditional_turn_off_heaters |
 |macros_print_startstop.cfg | conditional_turn_off_heaters | for use in stop_gcode.  Tracks an option for whether or not to turn off the heaters | works in conjuction with Macro set_turn_off|
 |macros_print_startstop.cfg | set_turn_off | sets whether or not conditional_turn_off_heaters should turn off the heaters | requires macro: conditional_turn_off_heaters
-|macros_print_startstop.cfg | heatsoak | a heat soak macro, to ensure the printer has completely warmed up before heating.  Based on slowly moving the toolhead around the bed, rather than on a timer | the coordinates of all 5 G0 commands should be updated to match your printer |
+|macros_print_startstop.cfg | heatsoak | a heat soak macro, to ensure the printer has completely warmed up before heating.  Based on slowly moving the toolhead around the bed | the coordinates of all 5 G0 commands should be updated to match your printer |
