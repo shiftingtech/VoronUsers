@@ -14,3 +14,11 @@ Please read them, and understand what they are doing, before blindly copying the
 | macros_filament.cfg | preheat_abs | a simple preheat | |
 | macros_pressure_advance.cfg | M900 | a simple mapping of M900 to SET_PRESSURE_ADVANCE | |
 | macros_pressure_advance.cfg | SELECT_PA | A macro which creates a lookup table for pressure advance, based on Filament and Nozzle | you will need to replace variable_pa_* with your own filaments, nozzles, and p.a. sizes following the format seen in the macro |
+|macros_print_startstop.cfg | prime_nozzle | Moves to the corner and makes a line| Update the X & Y coordinates for your bed |
+|macros_print_startstop.cfg | clean_nozzle | moves the nozzle rapidly back and forth through a wiper | update (120,319) & (60,319) to match the opposite sides of your brush.  Requires Macro move_to_wiper |
+|macros_print_startstop.cfg | move_to_wiper | moves the nozzle into position to begin a wipe | update the X Y & Z coordinates to match your wiper. |
+|macros_print_startstop.cfg | start_code | for use at the start of a print:  Heats,Homes, QGL's, wipes, and primes |  requires Macros: move_to_wiper, clean_nozzle, and prime_nozzle |
+|macros_print_startstop.cfg | stop_gcode | for use at the end of a print: parks the toolhead, and optionally turns off the heaters | requires Macro: conditional_turn_off_heaters |
+|macros_print_startstop.cfg | conditional_turn_off_heaters | for use in stop_gcode.  Tracks an option for whether or not to turn off the heaters | works in conjuction with Macro set_turn_off|
+|macros_print_startstop.cfg | set_turn_off | sets whether or not conditional_turn_off_heaters should turn off the heaters | requires macro: conditional_turn_off_heaters
+|macros_print_startstop.cfg | heatsoak | a heat soak macro, to ensure the printer has completely warmed up before heating.  Based on slowly moving the toolhead around the bed, rather than on a timer | the coordinates of all 5 G0 commands should be updated to match your printer |
